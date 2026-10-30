@@ -1,0 +1,628 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conoce los elementos tradicionales del altar de Día de Muertos y el significado de cada uno.">
+    <title>El altar de Día de Muertos | Nuestras tradiciones</title>
+
+    <style>
+        /* ESTILOS GENERALES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Trebuchet MS", Arial, sans-serif;
+            background-color: #fff9f0;
+            color: #35251f;
+            line-height: 1.7;
+        }
+
+        :root {
+            --naranja: #d96527;
+            --morado: #54284f;
+            --crema: #fff9f0;
+            --cafe: #35251f;
+            --amarillo: #f5bd50;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        /* ENCABEZADO */
+        header {
+            background-color: var(--morado);
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .logo {
+            font-size: 1.15rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-size: 0.92rem;
+            color: #fff1d9;
+        }
+
+        nav a:hover {
+            color: var(--amarillo);
+        }
+
+        /* PORTADA */
+        .portada {
+            min-height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 75px 20px;
+            background:
+                linear-gradient(
+                    rgba(40, 17, 37, 0.78),
+                    rgba(40, 17, 37, 0.72)
+                ),
+                url("https://commons.wikimedia.org/wiki/Special:FilePath/Altar%20de%20muertos%20mexicano.jpg?width=1600")
+                center 48% / cover no-repeat;
+            color: white;
+        }
+
+        .portada-contenido {
+            max-width: 760px;
+        }
+
+        .etiqueta {
+            color: var(--amarillo);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .portada h1 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1.15;
+            margin: 18px 0;
+        }
+
+        .portada p {
+            max-width: 620px;
+            margin: 0 auto 28px;
+            color: #fff2e8;
+            font-size: 1.05rem;
+        }
+
+        .boton {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--naranja);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .boton:hover {
+            background-color: #b84c19;
+        }
+
+        /* INTRODUCCIÓN */
+        .introduccion {
+            max-width: 850px;
+            margin: auto;
+            padding: 70px 24px 45px;
+            text-align: center;
+        }
+
+        .introduccion h2,
+        .seccion-titulo h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(1.9rem, 4vw, 2.7rem);
+            color: var(--morado);
+            line-height: 1.25;
+            margin: 12px 0 18px;
+        }
+
+        .introduccion p {
+            color: #6b5a50;
+            font-size: 1rem;
+        }
+
+        .flor {
+            color: var(--naranja);
+            font-size: 1.5rem;
+        }
+
+        /* TARJETAS DE LOS ELEMENTOS */
+        .elementos {
+            padding: 25px 7% 80px;
+            max-width: 1400px;
+            margin: auto;
+        }
+
+        .seccion-titulo {
+            text-align: center;
+            margin-bottom: 38px;
+        }
+
+        .seccion-titulo p {
+            color: #79665b;
+        }
+
+        .rejilla {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 26px;
+        }
+
+        .tarjeta {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #f0e3d5;
+            box-shadow: 0 5px 18px rgba(70, 38, 25, 0.06);
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(70, 38, 25, 0.12);
+        }
+
+        .tarjeta img {
+            display: block;
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background-color: #f0dfcb;
+        }
+
+        .tarjeta-contenido {
+            padding: 22px;
+        }
+
+        .numero {
+            display: inline-block;
+            font-size: 0.78rem;
+            font-weight: bold;
+            color: var(--naranja);
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .tarjeta h3 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1.35rem;
+            color: var(--morado);
+            margin-bottom: 9px;
+        }
+
+        .tarjeta p {
+            font-size: 0.94rem;
+            color: #6b5a50;
+        }
+
+        /* FRASE DESTACADA */
+        .frase {
+            margin: 0 7% 75px;
+            padding: 42px 25px;
+            text-align: center;
+            background-color: #f8ead8;
+            border-left: 5px solid var(--naranja);
+            border-radius: 5px;
+        }
+
+        .frase p {
+            max-width: 750px;
+            margin: auto;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            font-style: italic;
+            color: var(--morado);
+        }
+
+        .frase span {
+            display: block;
+            color: var(--naranja);
+            margin-top: 12px;
+            font-size: 0.9rem;
+        }
+
+        /* PIE DE PÁGINA */
+        footer {
+            background-color: var(--morado);
+            color: #fff2e8;
+            padding: 35px 20px;
+            text-align: center;
+        }
+
+        footer h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1.6rem;
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            font-size: 0.88rem;
+            color: #e8d7e3;
+            margin: 5px 0;
+        }
+
+        footer a {
+            color: var(--amarillo);
+        }
+
+        /* ADAPTACIÓN A CELULARES Y TABLETAS */
+        @media (max-width: 950px) {
+            .rejilla {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .rejilla {
+                grid-template-columns: 1fr;
+            }
+
+            .portada {
+                min-height: 390px;
+                padding: 55px 20px;
+            }
+
+            .tarjeta img {
+                height: 235px;
+            }
+
+            .elementos {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            .introduccion {
+                padding-top: 50px;
+            }
+
+            nav {
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- MENÚ PRINCIPAL -->
+    <header>
+        <div class="logo">✿ Nuestras tradiciones</div>
+
+        <nav aria-label="Menú principal">
+            <a href="#inicio">Inicio</a>
+            <a href="#elementos">Elementos</a>
+            <a href="#significado">Su significado</a>
+        </nav>
+    </header>
+
+    <!-- PORTADA -->
+    <main>
+        <section class="portada" id="inicio">
+            <div class="portada-contenido">
+                <span class="etiqueta">Una tradición mexicana</span>
+
+                <h1>El altar de<br>Día de Muertos</h1>
+
+                <p>
+                    Recordar también es una forma de mantener vivos
+                    a quienes dejaron una huella en nuestro corazón.
+                    Conoce los elementos que dan vida a esta hermosa tradición.
+                </p>
+
+                <a class="boton" href="#elementos">
+                    Descubrir los elementos
+                </a>
+            </div>
+        </section>
+
+        <!-- INTRODUCCIÓN -->
+        <section class="introduccion">
+            <span class="flor">✿ ✿ ✿</span>
+
+            <h2>Un recuerdo lleno de color</h2>
+
+            <p>
+                El altar u ofrenda de Día de Muertos es una tradición
+                mexicana dedicada a recordar con cariño a nuestros seres
+                queridos. Cada objeto tiene un significado especial y,
+                aunque las ofrendas cambian de una familia a otra,
+                todas comparten algo importante: el recuerdo y el amor.
+            </p>
+        </section>
+
+        <!-- ELEMENTOS DEL ALTAR -->
+        <section class="elementos" id="elementos">
+
+            <div class="seccion-titulo">
+                <span class="etiqueta" style="color: var(--naranja);">
+                    Conoce sus detalles
+                </span>
+
+                <h2>¿Qué lleva un altar?</h2>
+
+                <p>
+                    Estos son algunos de los elementos más representativos
+                    y lo que simbolizan dentro de la ofrenda.
+                </p>
+            </div>
+
+            <div class="rejilla">
+
+                <!-- 1. CEMPASÚCHIL -->
+                <article class="tarjeta">
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:FilePath/Cempas%C3%BAchil%20en%20ofrenda.jpg?width=700"
+                        alt="Flores de cempasúchil en una ofrenda"
+                        loading="lazy"
+                    >
+
+                    <div class="tarjeta-contenido">
+                        <span class="numero">01 / FLORES</span>
+                        <h3>Flor de cempasúchil</h3>
+                        <p>
+                            Su color naranja y su aroma son característicos
+                            de esta celebración. Sus pétalos se usan para
+                            adornar el altar y señalar el camino hacia la ofrenda.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- 2. VELADORAS -->
+                <article class="tarjeta">
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:FilePath/De%20velas%20y%20comida.JPG?width=700"
+                        alt="Velas encendidas como parte de una ofrenda"
+                        loading="lazy"
+                    >
+
+                    <div class="tarjeta-contenido">
+                        <span class="numero">02 / LUZ</span>
+                        <h3>Velas y veladoras</h3>
+                        <p>
+                            Representan la luz que guía a las almas
+                            para encontrar el camino de regreso
+                            y reunirse simbólicamente con sus seres queridos.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- 3. PAN DE MUERTO -->
+                <article class="tarjeta">
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:FilePath/Pan%20de%20muerto%20como%20ofrenda.jpg?width=700"
+                        alt="Pan de muerto tradicional mexicano"
+                        loading="lazy"
+                    >
+
+                    <div class="tarjeta-contenido">
+                        <span class="numero">03 / ALIMENTO</span>
+                        <h3>Pan de muerto</h3>
+                        <p>
+                            Es uno de los alimentos más representativos
+                            de la fecha. Se coloca como muestra de cariño
+                            y para compartir con quienes recordamos.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- 4. PAPEL PICADO -->
+                <article class="tarjeta">
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:FilePath/Papel%20picado%20del%20D%C3%ADa%20de%20Muertos.jpg?width=700"
+                        alt="Papel picado mexicano de colores"
+                        loading="lazy"
+                    >
+
+                    <div class="tarjeta-contenido">
+                        <span class="numero">04 / COLOR</span>
+                        <h3>Papel picado</h3>
+                        <p>
+                            Decora el altar con sus figuras y colores.
+                            Tradicionalmente representa el viento y
+                            aporta alegría a la ofrenda.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- 5. CALAVERITAS -->
+                <article class="tarjeta">
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:FilePath/Calaverita%20de%20az%C3%BAcar.jpg?width=700"
+                        alt="Calaverita de azúcar decorada"
+                        loading="lazy"
+                    >
+
+                    <div class="tarjeta-contenido">
+                        <span class="numero">05 / TRADICIÓN</span>
+                        <h3>Calaveritas</h3>
+                        <p>
+                            Elaboradas de azúcar o de otros dulces,
+                            recuerdan que la muerte forma parte de la vida
+                            y son una de las figuras más conocidas
+                            de esta celebración.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- 6. AGUA -->
+                <article class="tarjeta">
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:FilePath/Altar%20de%20muertos%20mexicano.jpg?width=700"
+                        alt="Ofrenda tradicional con distintos elementos"
+                        loading="lazy"
+                    >
+
+                    <div class="tarjeta-contenido">
+                        <span class="numero">06 / DESCANSO</span>
+                        <h3>Agua</h3>
+                        <p>
+                            Se ofrece para calmar la sed de las almas
+                            después de su largo camino. También se asocia
+                            con la pureza y la renovación.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- 7. FOTOGRAFÍA -->
+                <article class="tarjeta">
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:FilePath/Altar%20de%20muertos%20mexicano.jpg?width=700"
+                        alt="Altar de Día de Muertos con decoración tradicional"
+                        loading="lazy"
+                    >
+
+                    <div class="tarjeta-contenido">
+                        <span class="numero">07 / MEMORIA</span>
+                        <h3>Fotografía</h3>
+                        <p>
+                            El retrato recuerda a la persona a quien
+                            está dedicada la ofrenda. Es una manera
+                            de honrar su historia y mantener vivo su recuerdo.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- 8. COMIDA -->
+                <article class="tarjeta">
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:FilePath/De%20velas%20y%20comida.JPG?width=700"
+                        alt="Comida y velas en una ofrenda mexicana"
+                        loading="lazy"
+                    >
+
+                    <div class="tarjeta-contenido">
+                        <span class="numero">08 / CONVIVENCIA</span>
+                        <h3>Comida favorita</h3>
+                        <p>
+                            Se colocan platillos que disfrutaba la persona
+                            recordada. Cada familia elige los alimentos
+                            que le traen recuerdos especiales.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- 9. COPAL -->
+                <article class="tarjeta">
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:FilePath/Altar%20de%20muertos%20mexicano.jpg?width=700"
+                        alt="Ofrenda mexicana con adornos tradicionales"
+                        loading="lazy"
+                    >
+
+                    <div class="tarjeta-contenido">
+                        <span class="numero">09 / AROMA</span>
+                        <h3>Copal e incienso</h3>
+                        <p>
+                            Su aroma y su humo forman parte de muchas
+                            ofrendas. En la tradición se relacionan
+                            con la purificación del espacio y el recibimiento
+                            de las almas.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- 10. SAL -->
+                <article class="tarjeta">
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:FilePath/Altar%20de%20muertos%20mexicano.jpg?width=700"
+                        alt="Ofrenda tradicional del Día de Muertos"
+                        loading="lazy"
+                    >
+
+                    <div class="tarjeta-contenido">
+                        <span class="numero">10 / PUREZA</span>
+                        <h3>Sal</h3>
+                        <p>
+                            Se utiliza en algunas ofrendas como símbolo
+                            de purificación. Su presencia depende
+                            de las costumbres de cada familia y región.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- MENSAJE FINAL -->
+        <section class="frase" id="significado">
+            <p>
+                “Mientras alguien nos recuerde, una parte de nuestra
+                historia seguirá viva”.
+            </p>
+
+            <span>El significado de recordar</span>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <h2>Una tradición que vive en nosotros ✿</h2>
+
+        <p>
+            El Día de Muertos es memoria, cultura y unión familiar.
+        </p>
+
+        <p>
+            Proyecto educativo sobre las tradiciones mexicanas.
+        </p>
+
+        <p>
+            Información de referencia:
+            <a href="https://www.inah.gob.mx/foto-del-dia/ofrendas-para-los-muertos"
+               target="_blank" rel="noopener noreferrer">
+                Instituto Nacional de Antropología e Historia
+            </a>
+        </p>
+
+        <p>Hecho con cariño por la cultura de México.</p>
+    </footer>
+
+</body>
+</html>
+
